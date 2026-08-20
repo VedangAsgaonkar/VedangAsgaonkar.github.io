@@ -1,31 +1,28 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
   {% include head.html %}
-
   <body>
-
-    {% include sidebar.html %}
-
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
-          </h3>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-content">
+        <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">VA<span>.</span></a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
+        {% include navigation.html %}
+      </div>
+    </header>
+    <main id="main-content">
+      {{ content }}
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-content">
+        <p>© {{ site.time | date: '%Y' }} {{ site.title }}</p>
+        <div>
+          <a href="{{ site.author.url }}">GitHub</a>
+          <a href="mailto:{{ site.author.email }}">Email</a>
+          <a href="{{ '/atom.xml' | relative_url }}">RSS</a>
         </div>
       </div>
-
-      <div class="container content">
-        {{ content }}
-      </div>
-    </div>
-
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
-    <script src='{{ site.baseurl }}/public/js/script.js'></script>
+    </footer>
+    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
   </body>
 </html>

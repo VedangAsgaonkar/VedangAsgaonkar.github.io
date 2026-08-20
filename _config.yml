@@ -1,22 +1,40 @@
-# Setup
-title:               'Vedang Asgaonkar'
-tagline:             'At the curtain of the waterfall'
-description:         'Skywalker'
-url:                 http://vedangasgaonkar.github.io
-baseurl:             /
-paginate:            5
-permalink:           pretty
+title: Vedang Asgaonkar
+tagline: Computer science, systems, and machine learning
+description: Personal website of Vedang Asgaonkar.
+url: https://vedangasgaonkar.github.io
+baseurl: ""
+lang: en
+timezone: America/New_York
+permalink: /writing/:year/:month/:day/:title/
 
-# About/contact
 author:
-  name:              'Vedang Asgaonkar'
-  url:               https://github.com/VedangAsgaonkar/
-  email:             vedang@cse.iitb.ac.in
+  name: Vedang Asgaonkar
+  url: https://github.com/VedangAsgaonkar/
+  email: vedang@cse.iitb.ac.in
 
-# Gems
 plugins:
-  - jekyll-paginate
+  - jekyll-feed
 
-# Custom vars
-version:             3.14
-google_analytics_id: #UA-XXXX-Y
+markdown: kramdown
+excerpt_separator: "<!--more-->"
+
+collections:
+  research:
+    output: true
+    permalink: /research/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: research
+
+exclude:
+  - README.md
+  - LICENSE.md

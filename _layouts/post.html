@@ -2,26 +2,12 @@
 layout: default
 ---
 
-<div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date_to_string }}</span>
-  {{ content }}
-</div>
-
-{% if site.related_posts.size >= 1 %}
-<div class="related">
-  <h2>Related posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
+<article class="shell post-content">
+  <header class="page-intro post-intro">
+    <p class="eyebrow">Writing · <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time></p>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
+  </header>
+  <div class="prose">{{ content }}</div>
+  <p class="back-link"><a href="{{ '/writing/' | relative_url }}">← All writing</a></p>
+</article>

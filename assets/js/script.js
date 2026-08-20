@@ -1,15 +1,12 @@
-(function(document) {
-  var toggle = document.querySelector('.sidebar-toggle');
-  var sidebar = document.querySelector('#sidebar');
-  var checkbox = document.querySelector('#sidebar-checkbox');
+(function () {
+  var button = document.querySelector('.menu-button');
+  var navigation = document.querySelector('.site-nav');
 
-  document.addEventListener('click', function(e) {
-    var target = e.target;
+  if (!button || !navigation) return;
 
-    if(!checkbox.checked ||
-       sidebar.contains(target) ||
-       (target === checkbox || target === toggle)) return;
-
-    checkbox.checked = false;
-  }, false);
-})(document);
+  button.addEventListener('click', function () {
+    var isOpen = navigation.classList.toggle('is-open');
+    button.setAttribute('aria-expanded', String(isOpen));
+    button.textContent = isOpen ? 'Close' : 'Menu';
+  });
+})();
