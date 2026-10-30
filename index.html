@@ -1,29 +1,49 @@
 ---
 layout: default
 title: About
-description: Computer science researcher and systems builder.
+description: Vedang Asgaonkar is an MS in Computer Science student at Stanford, working on foundation models for relational data.
 ---
-<section class="shell hero" aria-labelledby="intro-heading">
-  <div>
-    <p class="eyebrow">Hello, I’m Vedang Asgaonkar</p>
-    <h1 id="intro-heading">Machine learning, from foundations to scale.</h1>
-    <p class="hero-copy">I enjoy solving elegant problems in machine learning architecture and foundational models. I'm currently excited about the micro and macro of machine learning - interprettability and scaling laws.</p>
-  </div>
-  <img class="hero-photo" src="{{ '/assets/profile.jpg' | relative_url }}" alt="Vedang Asgaonkar">
-</section>
-
-<section class="feature-band">
-  <div class="shell feature-grid">
-    <div><h2>Research</h2><p>Machine learning methods for low-SNR time series, feature acquisition, and retrieval.</p></div>
-    <div><h2>Systems</h2><p>Practical work across low-latency computing, networks, operating systems, and hardware.</p></div>
-    <div><h2>Teaching</h2><p>Experience supporting courses in AI, algorithms, programming, and linear algebra.</p></div>
-  </div>
-</section>
-
-<section class="shell home-section">
-  <div class="section-heading"><h2>A little more context</h2></div>
+<section class="intro" aria-labelledby="intro-heading">
+  <img class="portrait" src="{{ '/assets/profile.jpg' | relative_url }}" alt="Portrait of Vedang Asgaonkar" width="120" height="142">
+  <h1 id="intro-heading" class="chip">Vedang Asgaonkar</h1>
+  <p class="label">MS Computer Science, Stanford University</p>
+  <p class="entry-links">
+    <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a> |
+    <a href="{{ site.author.url }}">GitHub</a>
+  </p>
   <div class="prose">
-    <p>I studied computer science at IIT Bombay and have worked on research in active feature acquisition with Prof. Abir De, time-series retrieval with Prof. Sunita Sarawagi, evolutionary game theory at IST Austria, and data-science collaborations with IIMA and Stanford. I also interned in low-latency systems at Optiver Amsterdam. I have worked as a quantitative researcher at Tower Research Capital, building signals and models for mid-frequency trading</p>
-    <p>Outside work, I enjoy elegant puzzles, conversations about social behaviour, behavioural economics and rationality, travelling, strength training, swimming, and ping-pong.</p>
+    <p>I'm a first-year MSCS student at Stanford, specializing in AI. I work with Prof. Jure Leskovec on the Relational Transformer, a foundation model for in-context prediction on relational databases.</p>
+    <p>Before Stanford I spent two years as a quantitative researcher at Tower Research Capital in London and New York. I studied computer science at IIT Bombay, where I graduated first in my batch and did <a href="{{ '/research/' | relative_url }}">research</a> on feature acquisition, time-series retrieval and evolutionary game theory.</p>
   </div>
+</section>
+
+<section aria-labelledby="experience-heading">
+  <h2 id="experience-heading" class="section">Experience</h2>
+  {% for item in site.data.experience %}
+    {% capture meta %}{{ item.role }} · {{ item.place }}{% endcapture %}
+    {% include entry.html dates=item.dates title=item.org meta=meta summary=item.summary %}
+  {% endfor %}
+</section>
+
+<section aria-labelledby="education-heading">
+  <h2 id="education-heading" class="section">Education</h2>
+  {% for item in site.data.education %}
+    {% include entry.html dates=item.dates title=item.org meta=item.role summary=item.summary %}
+  {% endfor %}
+</section>
+
+<section aria-labelledby="publications-heading">
+  <h2 id="publications-heading" class="section">Publications</h2>
+  {% assign papers = site.research | sort: 'year' | reverse %}
+  {% for paper in papers %}
+    {% capture venue %}{{ paper.venue }} {{ paper.year }}{% endcapture %}
+    {% include entry.html dates=venue title=paper.title meta=paper.authors links=paper.links %}
+  {% endfor %}
+</section>
+
+<section aria-labelledby="awards-heading">
+  <h2 id="awards-heading" class="section">Awards</h2>
+  {% for item in site.data.awards %}
+    {% include entry.html dates=item.year title=item.title meta=item.detail %}
+  {% endfor %}
 </section>

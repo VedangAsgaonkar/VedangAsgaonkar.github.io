@@ -2,10 +2,9 @@
 layout: default
 ---
 
-<article class="shell page-content">
+<article>
   <header class="page-intro">
-    <p class="eyebrow">{{ page.eyebrow | default: 'Vedang Asgaonkar' }}</p>
-    <h1>{{ page.title }}</h1>
+    <h1 class="chip">{{ page.title }}</h1>
     {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
   </header>
   <div class="prose">{{ content }}</div>

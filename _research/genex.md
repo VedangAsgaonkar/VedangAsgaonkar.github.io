@@ -4,7 +4,14 @@ description: An approach to choosing which features to query in a batch under a 
 authors: Vedang Asgaonkar, Aditya Jain, Abir De
 venue: AAAI
 year: 2024
-paper_url: https://arxiv.org/pdf/2312.12574.pdf
+paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/28967
+links:
+  - label: details
+    url: /research/genex/
+  - label: AAAI'24
+    url: https://ojs.aaai.org/index.php/AAAI/article/view/28967
+  - label: arXiv
+    url: https://arxiv.org/abs/2312.12574
 math: true
 ---
 
@@ -70,4 +77,4 @@ We plot accuracy against query cost for four datasets and compare GENEX with RL-
 
 ## Contacts
 
-For questions or suggestions, contact [Vedang Asgaonkar](mailto:vedang@cse.iitb.ac.in), [Aditya Jain](mailto:adityajainjhs@cse.iitb.ac.in), or [Abir De](mailto:abir@cse.iitb.ac.in).
+For questions or suggestions, contact [Vedang Asgaonkar](mailto:vedanga@stanford.edu), [Aditya Jain](mailto:adityajainjhs@cse.iitb.ac.in), or [Abir De](mailto:abir@cse.iitb.ac.in).

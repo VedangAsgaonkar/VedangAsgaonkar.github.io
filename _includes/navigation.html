@@ -1,5 +1,12 @@
-<nav class="site-nav" aria-label="Primary navigation" id="site-navigation">
+<nav class="site-nav" aria-label="Primary navigation">
   {% for item in site.data.navigation %}
-    <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+    {% assign prefix = page.url | slice: 0, item.url.size %}
+    {% assign current = false %}
+    {% if item.url == '/' %}
+      {% if page.url == '/' or page.url == '/index.html' %}{% assign current = true %}{% endif %}
+    {% elsif prefix == item.url %}
+      {% assign current = true %}
+    {% endif %}
+    <a href="{{ item.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ item.label }}</a>
   {% endfor %}
 </nav>

@@ -1,0 +1,52 @@
+- dates: 2026–
+  title: Foundation models for relational data
+  where: Stanford, with Prof. Jure Leskovec
+  summary: >-
+    Architecture and pretraining improvements to the Relational Transformer, so that
+    few-shot in-context prediction on relational databases is competitive with
+    task-specific fine-tuned models on RelBench forecasting and autocomplete tasks.
+
+- dates: 2023–2024
+  title: Causal time-series retrieval
+  where: BTech project, IIT Bombay, with Prof. Sunita Sarawagi and Google Research
+  summary: >-
+    Retrieval module for the TextSpaceTime time-series foundation model. It greedily adds
+    the database series with the highest transfer entropy against the residual of the
+    target given the series already retrieved, discounting autoregressive information
+    in the target, after Granger causality.
+
+- dates: 2022–2023
+  title: Generator-assisted feature acquisition in batch
+  where: IIT Bombay, with Prof. Abir De
+  summary: >-
+    One-shot acquisition of a feature subset under a cost budget, as in diagnosis with
+    selective tests. Routes each instance to a data cohort with locality-sensitive
+    hashing, acquires that cohort's chosen features and imputes the rest with a VAE.
+    Beat the state of the art on 4 benchmarks.
+  links:
+    - label: details
+      url: /research/genex/
+    - label: AAAI'24
+      url: https://ojs.aaai.org/index.php/AAAI/article/view/28967
+    - label: arXiv
+      url: https://arxiv.org/abs/2312.12574
+
+- dates: 2022
+  title: Multi-strategy Moran processes
+  where: Research assistant, Chatterjee group, ISTA
+  summary: >-
+    Fixation probabilities for Moran processes on graphs with three competing
+    strategies. Found a martingale construction that generalizes beyond two strategies
+    and gave new bounds for very low and very high mutation probabilities, presented
+    as an internship thesis.
+
+- dates: 2022
+  title: Sentiment congruence in advertising
+  where: Research assistant, Prof. Narayanan (Stanford GSB) and Prof. Anuj Kapoor (IIMA)
+  summary: >-
+    Field experiment with the content platform VDO.AI on how emotional congruence
+    between a video and the ad served with it affects engagement, controlling for day,
+    time, region and the video's base sentiment. Incongruent ads converted better.
+  links:
+    - label: SSRN
+      url: https://ssrn.com/abstract=4131151

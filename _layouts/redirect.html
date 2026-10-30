@@ -1,7 +1,5 @@
 ---
 layout: default
 ---
-<meta http-equiv="refresh" content="0; url={{ page.redirect_to | relative_url }}">
-<section class="shell page-content">
-  <div class="prose"><p>This page has moved to <a href="{{ page.redirect_to | relative_url }}">{{ page.redirect_to | relative_url }}</a>.</p></div>
-</section>
+
+<p>This page has moved to <a href="{{ page.redirect_to | relative_url }}">{{ page.redirect_to | absolute_url }}</a>.</p>

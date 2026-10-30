@@ -1,16 +1,16 @@
 title: Vedang Asgaonkar
-tagline: Computer science, systems, and machine learning
-description: Personal website of Vedang Asgaonkar.
+tagline: Foundation models, machine learning and systems
+description: Vedang Asgaonkar, MS in Computer Science student at Stanford.
 url: https://vedangasgaonkar.github.io
 baseurl: ""
 lang: en
-timezone: America/New_York
+timezone: America/Los_Angeles
 permalink: /writing/:year/:month/:day/:title/
 
 author:
   name: Vedang Asgaonkar
   url: https://github.com/VedangAsgaonkar/
-  email: vedang@cse.iitb.ac.in
+  email: vedanga@stanford.edu
 
 plugins:
   - jekyll-feed

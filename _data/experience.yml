@@ -1,0 +1,19 @@
+- dates: 2024–2026
+  org: Tower Research Capital
+  place: London / New York
+  role: Quantitative Researcher
+  summary: >-
+    Early member of the mid-frequency trading desk. Built a model architecture for
+    cross-ticker dependencies that composes attention with recurrent time-series layers,
+    and an agentic model-training pipeline that handles 100k+ features while guarding
+    against overfitting and adapting to changes in market regime.
+
+- dates: 2023
+  org: Optiver
+  place: Amsterdam
+  role: Quantitative Developer Intern
+  summary: >-
+    Built the market-data input component for delta-one trading on TMX in modern C++.
+    It arbitrates packets across multiple streams to construct the limit order book and
+    parse trades, with cross-stream consistency encoded as a state machine. Received a
+    full-time return offer as a low-latency developer.

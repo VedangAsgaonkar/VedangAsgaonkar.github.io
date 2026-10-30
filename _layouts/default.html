@@ -3,26 +3,22 @@
   {% include head.html %}
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="site-header">
-      <div class="shell header-content">
-        <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">VA<span>.</span></a>
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
+    <div class="sheet">
+      <header class="site-header">
+        <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
         {% include navigation.html %}
-      </div>
-    </header>
-    <main id="main-content">
-      {{ content }}
-    </main>
-    <footer class="site-footer">
-      <div class="shell footer-content">
+      </header>
+      <main id="main-content">
+        {{ content }}
+      </main>
+      <footer class="site-footer">
         <p>© {{ site.time | date: '%Y' }} {{ site.title }}</p>
-        <div>
-          <a href="{{ site.author.url }}">GitHub</a>
-          <a href="mailto:{{ site.author.email }}">Email</a>
+        <p>
+          <a href="mailto:{{ site.author.email }}">Email</a> |
+          <a href="{{ site.author.url }}">GitHub</a> |
           <a href="{{ '/atom.xml' | relative_url }}">RSS</a>
-        </div>
-      </div>
-    </footer>
-    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
