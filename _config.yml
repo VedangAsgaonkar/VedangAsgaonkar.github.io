@@ -5,18 +5,13 @@ url: https://vedangasgaonkar.github.io
 baseurl: ""
 lang: en
 timezone: America/Los_Angeles
-permalink: /writing/:year/:month/:day/:title/
 
 author:
   name: Vedang Asgaonkar
   url: https://github.com/VedangAsgaonkar/
   email: vedanga@stanford.edu
 
-plugins:
-  - jekyll-feed
-
 markdown: kramdown
-excerpt_separator: "<!--more-->"
 
 collections:
   research:
@@ -24,11 +19,6 @@ collections:
     permalink: /research/:name/
 
 defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
   - scope:
       path: ""
       type: research

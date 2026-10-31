@@ -11,4 +11,4 @@ bundle install
 bundle exec jekyll serve
 ```
 
-The site is available at `http://localhost:4000`. CV content (experience, education, research, awards) lives in `_data/*.yml`; essays in `_posts/`, paper pages in `_research/`, shared templates in `_layouts/` and `_includes/`, and styles in `assets/css/site.css`.
+The site is available at `http://localhost:4000`. CV content (experience, education, research, awards) lives in `_data/*.yml`; paper pages in `_research/`, shared templates in `_layouts/` and `_includes/`, and styles in `assets/css/site.css`.
