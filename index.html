@@ -18,6 +18,15 @@ description: Vedang Asgaonkar is an MS in Computer Science student at Stanford, 
   </div>
 </section>
 
+<section aria-labelledby="publications-heading">
+  <h2 id="publications-heading" class="section">Publications</h2>
+  {% assign papers = site.research | sort: 'year' | reverse %}
+  {% for paper in papers %}
+    {% capture venue %}{{ paper.venue }} {{ paper.year }}{% endcapture %}
+    {% include entry.html dates=venue title=paper.title meta=paper.authors links=paper.links %}
+  {% endfor %}
+</section>
+
 <section aria-labelledby="experience-heading">
   <h2 id="experience-heading" class="section">Experience</h2>
   {% for item in site.data.experience %}
@@ -30,15 +39,6 @@ description: Vedang Asgaonkar is an MS in Computer Science student at Stanford, 
   <h2 id="education-heading" class="section">Education</h2>
   {% for item in site.data.education %}
     {% include entry.html dates=item.dates title=item.org meta=item.role summary=item.summary %}
-  {% endfor %}
-</section>
-
-<section aria-labelledby="publications-heading">
-  <h2 id="publications-heading" class="section">Publications</h2>
-  {% assign papers = site.research | sort: 'year' | reverse %}
-  {% for paper in papers %}
-    {% capture venue %}{{ paper.venue }} {{ paper.year }}{% endcapture %}
-    {% include entry.html dates=venue title=paper.title meta=paper.authors links=paper.links %}
   {% endfor %}
 </section>
 
