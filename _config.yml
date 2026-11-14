@@ -13,18 +13,14 @@ author:
   email: vedanga@stanford.edu
 
 markdown: kramdown
-
-collections:
-  research:
-    output: true
-    permalink: /research/:name/
+permalink: /blogs/:title/
 
 defaults:
   - scope:
       path: ""
-      type: research
+      type: posts
     values:
-      layout: research
+      layout: post
 
 exclude:
   - README.md

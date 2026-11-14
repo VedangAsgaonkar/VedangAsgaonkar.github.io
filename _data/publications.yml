@@ -1,0 +1,10 @@
+- venue: AAAI 2024
+  title: Generator Assisted Mixture of Experts for Feature Acquisition in Batch
+  authors: Vedang Asgaonkar, Aditya Jain, Abir De
+  links:
+    - label: blog
+      url: /blogs/genex/
+    - label: AAAI'24
+      url: https://ojs.aaai.org/index.php/AAAI/article/view/28967
+    - label: arXiv
+      url: https://arxiv.org/abs/2312.12574

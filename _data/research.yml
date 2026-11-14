@@ -24,8 +24,8 @@
     hashing, acquires that cohort's chosen features and imputes the rest with a VAE.
     Beat the state of the art on 4 benchmarks.
   links:
-    - label: details
-      url: /research/genex/
+    - label: blog
+      url: /blogs/genex/
     - label: AAAI'24
       url: https://ojs.aaai.org/index.php/AAAI/article/view/28967
     - label: arXiv

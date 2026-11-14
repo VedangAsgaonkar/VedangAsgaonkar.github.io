@@ -20,10 +20,8 @@ description: Vedang Asgaonkar is an MS in Computer Science student at Stanford, 
 
 <section aria-labelledby="publications-heading">
   <h2 id="publications-heading" class="section">Publications</h2>
-  {% assign papers = site.research | sort: 'year' | reverse %}
-  {% for paper in papers %}
-    {% capture venue %}{{ paper.venue }} {{ paper.year }}{% endcapture %}
-    {% include entry.html dates=venue title=paper.title meta=paper.authors links=paper.links %}
+  {% for paper in site.data.publications %}
+    {% include entry.html dates=paper.venue title=paper.title meta=paper.authors links=paper.links %}
   {% endfor %}
 </section>
 
