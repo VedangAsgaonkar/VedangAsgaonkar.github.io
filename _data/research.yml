@@ -6,6 +6,17 @@
     few-shot in-context prediction on relational databases is competitive with
     task-specific fine-tuned models on RelBench forecasting and autocomplete tasks.
 
+- dates: 2023
+  title: LLM tool-use agent for DevRev
+  where: Inter IIT Tech Meet, IIT Bombay team
+  summary: >-
+    Fine-tuned agent that turns conversational queries into a graph of tool calls,
+    adapting to the tools available. Built a synthetic dataset with ReAct prompting over
+    ~100 strongly typed domain tools, and a graph-based correctness metric that ignores
+    the order of independent calls. Fine-tuned 7B–13B open-source models with QLoRA on
+    masked tool and argument prediction, benchmarked against GPT and Claude, and added
+    a lightweight high-recall embedding retriever to narrow the tool search space.
+
 - dates: 2023–2024
   title: Causal time-series retrieval
   where: BTech project, IIT Bombay, with Prof. Sunita Sarawagi and Google Research
