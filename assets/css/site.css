@@ -38,7 +38,7 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em
 a:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
 a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
-.sheet { max-width: calc(80ch + 48px); margin: 0 auto; padding: 0 24px; }
+.sheet { max-width: calc(104ch + 48px); margin: 0 auto; padding: 0 24px; }
 .skip-link { position: absolute; left: 1rem; top: -5rem; background: var(--ink); color: var(--paper); padding: 0 1ch; }
 .skip-link:focus { top: 1rem; }
 
@@ -96,7 +96,7 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .intro .prose { margin-top: calc(var(--line) * 1.5); }
 
 .page-intro { margin-bottom: calc(var(--line) * 3); }
-.lede { margin-top: var(--line); color: var(--muted); max-width: 64ch; }
+.lede { margin-top: var(--line); color: var(--muted); max-width: 80ch; }
 .page-intro .entry-meta { margin-top: var(--line); }
 .back-link { margin-top: calc(var(--line) * 2); }
 
@@ -112,7 +112,7 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .entry-links a { color: var(--ink); }
 
 /* Long-form text. */
-.prose { max-width: 72ch; }
+.prose > p, .prose > ul, .prose > ol, .prose > blockquote { max-width: 96ch; }
 .prose p, .prose ul, .prose ol, .prose blockquote, .prose img { margin: 0 0 var(--line); }
 .prose > :last-child { margin-bottom: 0; }
 .prose .entry p { margin: 0; }
