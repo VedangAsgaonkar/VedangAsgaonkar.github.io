@@ -119,8 +119,23 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .prose h3 { margin: calc(var(--line) * 2) 0 calc(var(--line) / 2); text-transform: uppercase; }
 .prose ul { padding-left: 2ch; list-style-type: "- "; }
 .prose ol { padding-left: 3ch; }
+.prose h4 { margin: calc(var(--line) * 1.5) 0 calc(var(--line) / 2); }
+.prose h4::before { content: "> "; content: "> " / ""; color: var(--faint); }
 .prose blockquote { padding-left: 2ch; border-left: 1px solid var(--faint); color: var(--muted); }
 .prose img { border: 1px solid var(--faint); }
+
+/* Figures: images centred at the width the post asks for, caption beneath in muted text. */
+.prose figure { margin: var(--line) 0 calc(var(--line) * 1.5); text-align: center; }
+.prose figure img { display: inline-block; max-width: 100%; margin: 0; vertical-align: top; }
+.prose .figure-row { display: flex; justify-content: center; gap: 2ch; }
+.prose .figure-row img { min-width: 0; }
+.prose figcaption { margin: calc(var(--line) / 2) auto 0; max-width: 72ch; color: var(--muted); }
+
+/* Tables: plain rules, scrolling sideways on narrow screens instead of squeezing. */
+.prose table { display: block; overflow-x: auto; margin: 0 0 var(--line); border-collapse: collapse; }
+.prose th, .prose td { padding: 0 3ch calc(var(--line) / 4) 0; border-bottom: 1px solid var(--faint); text-align: left; white-space: nowrap; }
+.prose th { color: var(--muted); text-transform: uppercase; }
+.prose td { padding-top: calc(var(--line) / 4); }
 .prose code { font: inherit; }
 .prose mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; }
 .intro .prose p:last-child { margin-bottom: 0; }
