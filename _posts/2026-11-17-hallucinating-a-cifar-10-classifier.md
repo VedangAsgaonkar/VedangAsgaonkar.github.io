@@ -2,6 +2,9 @@
 title: Hallucinating a CIFAR-10 Classifier
 description: We asked language models to write the weights of a zero-initialized CIFAR-10 ResNet-18 without backpropagation.
 authors: Vedang Asgaonkar, Sarthak Mangla, Mridul Agarwal
+links:
+  - label: GitHub
+    url: https://github.com/knightron0/ricursive-wsp
 math: true
 ---
 
