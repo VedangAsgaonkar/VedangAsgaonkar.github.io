@@ -140,4 +140,4 @@ Our favourite part was seeing the strange ways the models approached the problem
 
 The reasoning-only setting felt the most interesting – Opus managed to construct a useful visual representation without labels, then turn label statistics into a working classifier entirely through in-context reasoning. We're curious how far this can go with better representations (maybe post-training?), larger reasoning budgets, and architectures that are easier to program directly.
 
-If you're interested in looking at the harness, all of the code is available on GitHub!
+If you're interested in looking at the harness, all of the code is available on [GitHub](https://github.com/knightron0/ricursive-wsp)!
