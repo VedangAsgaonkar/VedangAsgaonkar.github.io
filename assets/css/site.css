@@ -1,24 +1,26 @@
 /* A typed document: one monospace face at one weight, ink on paper, "=" rules between sections.
    Vertical spacing is counted in lines (--line) so the page keeps a single rhythm. */
+/* Dark is the default for everyone; the header toggle sets data-theme="light" on <html>. */
 :root {
+  --ink: #f3f3ec;
+  --paper: #111210;
+  --muted: #a5aa9a;
+  --faint: #3d3f39;
+  --code: #24261f;
+  --focus: #ff8a3d;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --line: 1.7rem;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
   --ink: #111;
   --paper: #fff;
   --muted: #5c5c5c;
   --faint: #c4c4c4;
+  --code: #eeeee9;
   --focus: #b06300;
-  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
-  --line: 1.7rem;
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink: #f3f3ec;
-    --paper: #111210;
-    --muted: #a5aa9a;
-    --faint: #3d3f39;
-    --focus: #ff8a3d;
-  }
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -37,6 +39,8 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em; }
 a:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
 a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+::selection { background: var(--ink); color: var(--paper); }
+.chip::selection, .site-nav a[aria-current="page"]::selection { background: var(--muted); color: var(--paper); }
 
 .sheet { max-width: calc(104ch + 48px); margin: 0 auto; padding: 0 24px; }
 .skip-link { position: absolute; left: 1rem; top: -5rem; background: var(--ink); color: var(--paper); padding: 0 1ch; }
@@ -53,6 +57,14 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .site-nav a { color: var(--muted); text-decoration: none; padding: 0 .5ch; margin: 0 -.5ch; }
 .site-nav a:hover { color: var(--paper); }
 .site-nav a[aria-current="page"] { background: var(--ink); color: var(--paper); }
+.header-right { display: flex; flex-wrap: wrap; gap: 0 3ch; }
+.theme-toggle {
+  font: inherit; text-transform: inherit; color: var(--muted);
+  background: none; border: 0; padding: 0 .5ch; margin: 0 -.5ch; cursor: pointer;
+  font-variant-emoji: text; font-size: 1.25rem; line-height: var(--line);
+}
+.theme-toggle:hover { background: var(--ink); color: var(--paper); }
+.theme-toggle:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
 .site-footer {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 3ch;
@@ -136,7 +148,9 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .prose th, .prose td { padding: 0 3ch calc(var(--line) / 4) 0; border-bottom: 1px solid var(--faint); text-align: left; white-space: nowrap; }
 .prose th { color: var(--muted); text-transform: uppercase; }
 .prose td { padding-top: calc(var(--line) / 4); }
-.prose code { font: inherit; }
+/* Inline code on a faint plate, so commands stand out in an all-monospace page. */
+.prose code { font: inherit; background: var(--code); padding: 0 .5ch; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.prose a code { background: none; padding: 0; }
 .prose mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; }
 .intro .prose p:last-child { margin-bottom: 0; }
 
@@ -148,6 +162,6 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 }
 
 @media print {
-  :root { --ink: #000; --paper: #fff; --muted: #444; --faint: #999; }
+  :root { --ink: #000; --paper: #fff; --muted: #444; --faint: #999; --code: #eee; }
   .skip-link, .site-nav { display: none; }
 }

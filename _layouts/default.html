@@ -6,7 +6,10 @@
     <div class="sheet">
       <header class="site-header">
         <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-        {% include navigation.html %}
+        <div class="header-right">
+          {% include navigation.html %}
+          <button class="theme-toggle" type="button" hidden></button>
+        </div>
       </header>
       <main id="main-content">
         {{ content }}
@@ -20,5 +23,25 @@
         </p>
       </footer>
     </div>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var button = document.querySelector('.theme-toggle');
+        function label() {
+          var light = root.getAttribute('data-theme') === 'light';
+          // U+FE0E asks for the plain text glyph rather than a colour emoji.
+          button.textContent = light ? '☾︎' : '☀︎';
+          button.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+        }
+        button.addEventListener('click', function () {
+          var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+          if (next === 'light') root.setAttribute('data-theme', 'light'); else root.removeAttribute('data-theme');
+          try { localStorage.setItem('theme', next); } catch (e) {}
+          label();
+        });
+        label();
+        button.hidden = false;
+      })();
+    </script>
   </body>
 </html>
